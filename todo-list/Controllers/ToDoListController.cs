@@ -72,5 +72,12 @@ namespace todo_list.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("logs")]
+        public IActionResult GetLogs()
+        {
+            var logs = LogService.ListarLogs();
+            return Ok(logs);
+        }
     }
 }
